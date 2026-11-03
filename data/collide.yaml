@@ -1,3 +1,2 @@
-mode: REMOTE-WINS
+mode: base
 owner: nobody
-remote 3
