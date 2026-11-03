@@ -1,0 +1,4 @@
+role: switch
+vlans:
+  - id: 100
+    name: mgmt
