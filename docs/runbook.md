@@ -1,2 +1,2 @@
 remote modified what local deleted
-remote 1
+LOCAL work A
