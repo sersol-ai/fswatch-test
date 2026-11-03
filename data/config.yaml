@@ -3,3 +3,4 @@ vlans:
   - id: 100
     name: mgmt
 LOCAL colliding line
+remote 2
