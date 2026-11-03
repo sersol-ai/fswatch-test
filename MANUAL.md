@@ -169,6 +169,7 @@ What the lines mean:
 | `watch: fswatch attached pid=…` | fswatch is running and its output is being read |
 | `watch: fswatch stderr: …` | fswatch complaining. `Invalid handle when opening C:\C:\…` means a Windows path reached it instead of `/cygdrive/c/…` |
 | `watch: fswatch stream ended, restart #1 in 5s` | fswatch exited; watcher is bringing it back (gives up after 10) |
+| `watch: flushing pending cycle` | a change arrived just as fswatch stopped; the cycle ran before restarting it |
 | `watch: stopped` | watcher exited |
 
 Rotates to `.log.1` past 1 MB.
@@ -222,6 +223,8 @@ real repos so stray files never get committed.
 | Symptom | Cause / fix |
 | --- | --- |
 | Windows edits never reach GitHub | watcher not running (`install-task.ps1 -Action status`); fswatch missing (`winget install --id emcrisostomo.fswatch -e`) |
+| `watch: fswatch attached` appears but no cycles | check for `watch: fswatch stderr:` lines — that is fswatch rejecting the path. Then run `check-syntax.ps1` |
+| `sync.ps1` exits at once saying git was not found | `config.json`'s `git` must be a full path (`C:\Program Files\Git\cmd\git.exe`), not `"git"` |
 | GitHub changes never appear here | that is the **timer** leg, not fswatch — a watch can't see other people's pushes. Wait `pullIntervalSec`, or run a cycle |
 | Sync does nothing at all | halted — step 6 |
 | A file you edited got reverted | GitHub won. Check `OVERRIDDEN` in the log; recover from history, step 6 |
