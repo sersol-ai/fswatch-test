@@ -2,3 +2,4 @@ role: switch
 vlans:
   - id: 100
     name: mgmt
+REMOTE colliding line
