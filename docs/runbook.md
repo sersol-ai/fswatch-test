@@ -8,3 +8,4 @@ LOCAL work A
 quiet probe
 remote modified what local deleted
 remote modified what local deleted
+remote modified what local deleted
