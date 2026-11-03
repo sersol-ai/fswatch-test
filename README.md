@@ -15,3 +15,4 @@ Each fixture below exists to probe one specific failure mode.
 | `data/empty.txt` | zero-byte file |
 | `data/big.txt` | ~2 MB, cycle timing |
 | `.scratch/` | gitignored, must never be committed |
+local edit to a file remote will delete
