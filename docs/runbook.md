@@ -5,3 +5,4 @@ remote modified what local deleted
 remote modified what local deleted
 remote modified what local deleted
 LOCAL work A
+quiet probe
